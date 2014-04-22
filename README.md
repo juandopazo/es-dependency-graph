@@ -1,19 +1,19 @@
-dependency-graph
-================
+module-graph
+============
 
 Utility for obtaining the dependency graph from ES6 modules.
 
 Usage
 -----
 
-```
-npm install dependency-graph
+```shell
+npm install module-graph
 ```
 
 From your Node application:
 
 ```js
-var graph = require('dependency-graph');
+var graph = require('module-graph');
 ```
 
 API Reference
