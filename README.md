@@ -13,7 +13,7 @@ npm install dependency-graph
 From your Node application:
 
 ```js
-var graph = require('graph');
+var graph = require('dependency-graph');
 ```
 
 API Reference
