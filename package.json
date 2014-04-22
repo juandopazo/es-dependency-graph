@@ -6,5 +6,12 @@
         "esprima": "git://github.com/ariya/esprima.git#harmony",
         "async": "~0.7.0"
     },
-    "main": "lib/index.js"
+    "devDependencies": {
+        "mocha": "~1.18.2",
+        "chai": "~1.9.1"
+    },
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "_mocha tests/index.js"
+    }
 }
