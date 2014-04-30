@@ -1,4 +1,4 @@
-var esprima = require('esprima'),
+var esprima = require('./vendor/esprima.js'),
     async   = require('async'),
     path    = require('path'),
     fs      = require('fs');

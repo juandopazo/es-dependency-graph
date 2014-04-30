@@ -1,4 +1,4 @@
-var graph  = require('../lib/index.js'),
+var graph  = require('../module-graph.js'),
     path   = require('path'),
     expect = require('chai').expect;
 
