@@ -2,6 +2,13 @@
     "name": "module-graph",
     "version": "0.1.0",
     "private": true,
+    "bin": {
+        "module-graph": "./bin/cli.js"
+    },
+    "dependencies": {
+        "nomnom": "^1.6.2",
+        "extend": "^1.2.1"
+    },
     "devDependencies": {
         "mocha": "~1.18.2",
         "chai": "~1.9.1"
