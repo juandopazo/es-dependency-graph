@@ -10,13 +10,13 @@ cli(require('nomnom')
         },
         walk: {
             abbr: 'w',
-            help: 'Walk the folder structure looking for more files',
+            help: 'Walk the folder structure',
             default: false
         },
         output: {
             abbr: 'o',
             metavar: 'FILE',
-            help: 'File to write the dependency information to'
+            help: 'Output JSON file'
         }
     })
     .nocolors()
