@@ -15,7 +15,7 @@
         "mocha": "~1.18.2",
         "chai": "~1.9.1"
     },
-    "main": "module-graph.js",
+    "main": "lib/index.js",
     "scripts": {
         "test": "_mocha tests/*.js"
     }
