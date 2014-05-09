@@ -8,7 +8,7 @@ API
 
 `module-graph` exports a single function that takes an object with module names
 in its keys and source code in its values. It then returns an object with the
-same keys an for each module an object with a `requires` property:
+same keys an for each module an object with a `deps` property:
 
 ```js
 var graph = require('module-graph');
@@ -20,7 +20,7 @@ var result = graph({
 /* result looks like this:
 {
     foo: {
-        requires: ['bar']
+        deps: ['bar']
     }
 }
 */
