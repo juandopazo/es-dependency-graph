@@ -36,6 +36,12 @@ If installed with `npm install module-graph -g` it can be used as a global
 command `module-graph paths... [options]` which will generate a JSON file with
 all the dependency information. Try `module-graph --help` for more information.
 
+Limitations
+-----------
+
+`module-graph` only works for source code that the Esprima parser can parse.
+This does not include the whole ES6 syntax at the moment.
+
 License
 -------
 
