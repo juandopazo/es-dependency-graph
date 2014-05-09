@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "bin": {
-        "module-graph": "./bin/cli.js"
+        "module-graph": "./bin/module-graph.js"
     },
     "dependencies": {
         "nomnom": "^1.6.2",
