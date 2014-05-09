@@ -29,9 +29,6 @@ var options = require('nomnom')
 var dependencies = {};
 
 options.path
-    .map(function (relPath) {
-        return path.resolve(__dirname, relPath);
-    })
     .forEach(function parse(filepath) {
         var stat = fs.statSync(filepath),
             sources = {};
@@ -54,4 +51,4 @@ options.path
 
 dependencies = JSON.stringify(dependencies);
 
-fs.writeFileSync(path.resolve(__dirname, options.output), dependencies, 'utf8');
+fs.writeFileSync(options.output, dependencies, 'utf8');
