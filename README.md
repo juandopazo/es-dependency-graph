@@ -3,8 +3,8 @@ module-graph
 
 Utility for obtaining the dependency graph from ES6 modules.
 
-Usage
------
+Installation
+------------
 
 ```shell
 npm install module-graph
@@ -16,28 +16,29 @@ From your Node application:
 var graph = require('module-graph');
 ```
 
-API Reference
--------------
+Usage
+-----
 
-None of the dependency names are normalized. It's up to you to decide how to
-normalize them.
+`module-graph` exports a single function that takes an object with module names
+in its keys and source code in its values. It then returns an object with the
+same keys an for each module an object with a `requires` property:
 
-### graph.parse(source)
-Parses a source file and returns an object with a `requires` property:
 ```js
+var result = graph({
+    foo: 'import bar from "bar";'
+});
+
+/* result looks like this:
 {
-  'requires': [/* list of dependencies */]
+    foo: {
+        requires: ['bar']
+    }
 }
+*/
 ```
 
-### graph.read(filePath, callback)
-Reads and parses a single source file. Takes a callback that will eventually be
-called with an error or an object similar to the one returned by `parse`.
-
-### graph.crawl(folderPath, callback)
-Reads all the files in a folder and its subfolders and parses them. The callback
-eventually gets an object with each module names as a key and values similar to
-the ones returned by `parse`.
+Note: none of the dependency names are normalized. It's up to you to decide how to
+normalize them.
 
 License
 -------
