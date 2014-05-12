@@ -17,10 +17,19 @@ describe('graph', function () {
         expect(result)
             .to.deep.equal([
                 {
-                    deps: ['bar']
-                },
-                {
-                    deps: ['module1']
+                    imports: {
+                        module2: ['foo'],
+                        module3: ['default'],
+                        module4: ['foo']
+                    },
+                    exports: [
+                        'bar',
+                        'baz',
+                        'hello',
+                        'asdf',
+                        'qwer',
+                        'default'
+                    ]
                 }
             ]);
     });

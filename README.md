@@ -7,16 +7,19 @@ API
 ---
 
 `module-graph` exports a single function that takes a string with source code
-and an object with a `deps` property:
+and an object with `imports` and `exports` properties:
 
 ```js
 var graph = require('module-graph');
 
-var result = graph('import bar from "bar";');
+var result = graph('import foo from "bar"; export default foo;');
 
 /* result looks like this:
 {
-    deps: ['bar']
+    imports: {
+        'foo': ['bar']
+    },
+    exports: ['default']
 }
 */
 ```

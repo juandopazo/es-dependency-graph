@@ -24,10 +24,19 @@ describe('CLI', function () {
         expect(JSON.parse(fs.readFileSync(graphPath, 'utf8')))
             .to.deep.equal({
                 module1: {
-                    deps: ['bar']
-                },
-                module2: {
-                    deps: ['module1']
+                    imports: {
+                        module2: ['foo'],
+                        module3: ['default'],
+                        module4: ['foo']
+                    },
+                    exports: [
+                        'bar',
+                        'baz',
+                        'hello',
+                        'asdf',
+                        'qwer',
+                        'default'
+                    ]
                 }
             });
     });
