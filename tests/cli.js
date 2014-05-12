@@ -24,10 +24,10 @@ describe('CLI', function () {
         expect(JSON.parse(fs.readFileSync(graphPath, 'utf8')))
             .to.deep.equal({
                 module1: {
-                    requires: ['bar']
+                    deps: ['bar']
                 },
                 module2: {
-                    requires: ['module1']
+                    deps: ['module1']
                 }
             });
     });

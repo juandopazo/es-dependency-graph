@@ -6,28 +6,23 @@ Utility for obtaining the dependency graph from ES6 modules.
 API
 ---
 
-`module-graph` exports a single function that takes an object with module names
-in its keys and source code in its values. It then returns an object with the
-same keys an for each module an object with a `deps` property:
+`module-graph` exports a single function that takes a string with source code
+and an object with a `deps` property:
 
 ```js
 var graph = require('module-graph');
 
-var result = graph({
-    foo: 'import bar from "bar";'
-});
+var result = graph('import bar from "bar";');
 
 /* result looks like this:
 {
-    foo: {
-        deps: ['bar']
-    }
+    deps: ['bar']
 }
 */
 ```
 
-Note: none of the dependency names are normalized. It's up to you to decide how to
-normalize them.
+Note: none of the dependency names are normalized. It's up to you to decide how
+to normalize them.
 
 CLI
 ---
