@@ -1,10 +1,11 @@
-var graph  = require('./index'),
-    mkdirp = require('mkdirp'),
-    extend = require('extend'),
-    path   = require('path'),
-    fs     = require('fs');
+/*jslint esnext:true*/
+import graph  from './index';
+import mkdirp from 'mkdirp';
+import extend from 'extend';
+import path   from 'path';
+import fs     from 'fs';
 
-module.exports = function (options) {
+export default function (options) {
     var dependencies = {};
 
     options.path.forEach(function parse(filepath) {
@@ -32,4 +33,4 @@ module.exports = function (options) {
     mkdirp.sync(path.dirname(options.output));
 
     fs.writeFileSync(options.output, dependencies, 'utf8');
-};
+}

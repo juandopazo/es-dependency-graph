@@ -1,7 +1,7 @@
-var esprima = require('../vendor/esprima.js'),
-    concat  = Function.prototype.apply.bind(Array.prototype.concat, []);
+/*jslint esnext:true*/
+import esprima from '../vendor/esprima';
 
-module.exports = parse;
+var concat  = Function.prototype.apply.bind(Array.prototype.concat, []);
 
 function hashImports(arr) {
     var result = {};
@@ -19,7 +19,7 @@ function hashImports(arr) {
     return result;
 }
 
-function parse(source) {
+export default function parse(source) {
     var body = esprima.parse(source).body,
         imports = body.filter(function (statement) {
             return statement.type === 'ImportDeclaration';
