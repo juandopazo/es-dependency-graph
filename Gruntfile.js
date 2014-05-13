@@ -6,9 +6,9 @@ module.exports = function (grunt) {
                 compatFix: true,
                 files: [{
                     expand: true,
-                    cwd: 'src/',
+                    cwd: 'lib/',
                     src: ['*.js'],
-                    dest: 'dist/'
+                    dest: 'build/'
                 }]
             }
         },
@@ -19,9 +19,9 @@ module.exports = function (grunt) {
             main: {
                 files: [{
                     expand: true,
-                    cwd: 'dist/',
+                    cwd: 'build/',
                     src: ['*.js'],
-                    dest: 'lib/'
+                    dest: 'dist/'
                 }]
             }
         },
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            main: ['dist/', 'lib/']
+            main: ['build/', 'dist/']
         }
     });
 
