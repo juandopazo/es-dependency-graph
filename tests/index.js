@@ -1,4 +1,4 @@
-var graph  = require('../lib/index'),
+var graph  = require('../dist/index'),
     path   = require('path'),
     fs     = require('fs'),
     expect = require('chai').expect;

@@ -1,4 +1,4 @@
-var cli    = require('../lib/cli'),
+var cli    = require('../dist/cli'),
     path   = require('path'),
     fs     = require('fs'),
     rimraf = require('rimraf'),

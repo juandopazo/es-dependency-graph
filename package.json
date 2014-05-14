@@ -21,7 +21,7 @@
         "grunt-mocha-test": "^0.10.2",
         "grunt-contrib-clean": "^0.5.0"
     },
-    "main": "lib/index.js",
+    "main": "dist/index.js",
     "scripts": {
         "prepublish": "grunt build",
         "test": "grunt test"

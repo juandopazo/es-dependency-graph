@@ -1,0 +1,42 @@
+"use strict";
+/*jslint esnext:true*/
+var graph = require("./index")["default"] || require("./index");
+
+var mkdirp = require("mkdirp")["default"] || require("mkdirp");
+
+var extend = require("extend")["default"] || require("extend");
+
+var path = require("path")["default"] || require("path");
+
+var fs = require("fs")["default"] || require("fs");
+
+
+exports["default"] = function (options) {
+    var dependencies = {};
+
+    options.path.forEach(function parse(filepath) {
+        var stat = fs.statSync(filepath),
+            sources = {};
+
+        if (stat.isFile() && path.extname(filepath) === '.js') {
+            dependencies[path.basename(filepath, '.js')] =
+                graph(fs.readFileSync(filepath, 'utf8'));
+        } else if (stat.isDirectory()) {
+            fs.readdirSync(filepath).forEach(function (filename) {
+                var subpath = path.join(filepath, filename),
+                    substat = fs.statSync(subpath);
+
+                if (substat.isFile() ||
+                    (substat.isDirectory() && options.walk)) {
+                    parse(subpath);
+                }
+            });
+        }
+    });
+
+    dependencies = JSON.stringify(dependencies);
+
+    mkdirp.sync(path.dirname(options.output));
+
+    fs.writeFileSync(options.output, dependencies, 'utf8');
+}
