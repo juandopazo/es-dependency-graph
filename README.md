@@ -43,4 +43,7 @@ This does not include the whole ES6 syntax at the moment.
 License
 -------
 
-Yahoo BSD
+This software is free to use under the Yahoo Inc. BSD license.
+See the [LICENSE file][] for license text and copyright information.
+
+[LICENSE file]: https://github.com/yahoo/module-graph/blob/master/LICENSE.md
