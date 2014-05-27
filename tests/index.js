@@ -4,33 +4,56 @@ var graph  = require('../dist/index'),
     expect = require('chai').expect;
 
 describe('graph', function () {
-    it('parses several modules correctly', function () {
-        var dir = path.join(__dirname, 'assets/'),
-            result = fs.readdirSync(dir).map(function (file) {
-                return path.join(dir, file);
-            }).filter(function (file) {
-                return fs.statSync(file).isFile();
-            }).map(function (file) {
-                return graph(fs.readFileSync(file, 'utf8'));
-            });
+    describe('with includeBindings set to: false', function () {
+        it('parses several modules correctly', function () {
+            var dir = path.join(__dirname, 'assets/'),
+                result = fs.readdirSync(dir).map(function (file) {
+                    return path.join(dir, file);
+                }).filter(function (file) {
+                    return fs.statSync(file).isFile();
+                }).map(function (file) {
+                    return graph(fs.readFileSync(file, 'utf8'), {
+                        includeBindings: false
+                    });
+                });
 
-        expect(result)
-            .to.deep.equal([
-                {
-                    imports: {
-                        module2: ['foo'],
-                        module3: ['default'],
-                        module4: ['foo']
-                    },
-                    exports: [
-                        'bar',
-                        'baz',
-                        'hello',
-                        'asdf',
-                        'qwer',
-                        'default'
-                    ]
-                }
-            ]);
+            expect(result)
+                .to.deep.equal([
+                    ['module2', 'module3', 'module4']
+                ]);
+        });
+    });
+    describe('with includeBindings set to: true', function () {
+        it('parses several modules correctly', function () {
+            var dir = path.join(__dirname, 'assets/'),
+                result = fs.readdirSync(dir).map(function (file) {
+                    return path.join(dir, file);
+                }).filter(function (file) {
+                    return fs.statSync(file).isFile();
+                }).map(function (file) {
+                    return graph(fs.readFileSync(file, 'utf8'), {
+                        includeBindings: true
+                    });
+                });
+
+            expect(result)
+                .to.deep.equal([
+                    {
+                        imports: {
+                            module2: ['foo'],
+                            module3: ['default'],
+                            module4: ['foo']
+                        },
+                        exports: [
+                            'bar',
+                            'baz',
+                            'hello',
+                            'asdf',
+                            'qwer',
+                            'default'
+                        ]
+                    }
+                ]);
+        });
     });
 });

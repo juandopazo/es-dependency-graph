@@ -17,6 +17,10 @@ cli(require('nomnom')
             abbr: 'o',
             metavar: 'FILE',
             help: 'Output JSON file'
+        },
+        'include-bindings': {
+            abbr: 'b',
+            help: 'Include named imports and exports'
         }
     })
     .nocolors()
