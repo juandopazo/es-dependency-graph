@@ -44,6 +44,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask('build', ['clean', 'transpile', 'es6_module_wrap_default']);
-    grunt.registerTask('test', ['mochaTest']);
+    grunt.registerTask('test', ['build', 'mochaTest']);
     grunt.registerTask('default', ['build']);
 };
