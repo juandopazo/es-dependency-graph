@@ -38,6 +38,17 @@ var result = graph('import foo from "bar"; export default foo;', {
 */
 ```
 
+Optionally, if you're already dealing with an AST that contains ES6 imports
+or exports, you can pass that AST object to the `graph` function:
+
+```
+var esprima = require('esprima'); // Make sure your Esprima version supports ES6!
+var graph   = require('module-graph');
+
+var ast = esprima.parse('import foo from "bar"; export default foo;');
+var result = graph(ast);
+```
+
 Note: none of the dependency names are normalized. It's up to you to decide how
 to normalize them.
 

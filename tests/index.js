@@ -3,12 +3,31 @@ Copyright 2014 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/yahoo/module-graph/blob/master/LICENSE.md
 */
-var graph  = require('../dist/index'),
-    path   = require('path'),
-    fs     = require('fs'),
-    expect = require('chai').expect;
+var graph   = require('../dist/index'),
+    path    = require('path'),
+    fs      = require('fs'),
+    esprima = require('../vendor/esprima'),
+    expect  = require('chai').expect;
 
 describe('graph', function () {
+    it('deals with AST objects correctly', function () {
+        var dir = path.join(__dirname, 'assets/'),
+            result = fs.readdirSync(dir)
+                .map(function (file) {
+                    return path.join(dir, file);
+                })
+                .filter(function (file) {
+                    return fs.statSync(file).isFile();
+                })
+                .map(function (file) {
+                    return graph(esprima.parse(fs.readFileSync(file, 'utf8')));
+                });
+
+        expect(result)
+            .to.deep.equal([
+                ['module2', 'module3', 'module4']
+            ]);
+    });
     describe('with includeBindings set to: false', function () {
         it('parses several modules correctly', function () {
             var dir = path.join(__dirname, 'assets/'),
