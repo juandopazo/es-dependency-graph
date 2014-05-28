@@ -1,7 +1,15 @@
 {
     "name": "module-graph",
+    "description": "Utility for obtaining the dependency graph from ES6 modules",
+    "keywords": [
+        "ecmascript",
+        "es6",
+        "AST",
+        "dependency",
+        "dependencies",
+        "analizer"
+    ],
     "version": "0.4.0",
-    "private": true,
     "bin": {
         "module-graph": "./bin/module-graph.js"
     },
@@ -21,6 +29,7 @@
         "grunt-mocha-test": "^0.10.2",
         "grunt-contrib-clean": "^0.5.0"
     },
+    "files": ["dist", "build", "bin", "vendor", "LICENSE.md"],
     "main": "dist/index.js",
     "scripts": {
         "prepublish": "grunt build",
