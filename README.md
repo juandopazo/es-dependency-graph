@@ -7,7 +7,7 @@ API
 ---
 
 `module-graph` exports a single function that takes a string with source code
-and an object with `imports` and `exports` properties:
+and returns an object with `imports` and `exports` properties:
 
 ```js
 var graph = require('module-graph');
@@ -22,6 +22,17 @@ var result = graph('import foo from "bar"; export default foo;');
     exports: ['default']
 }
 */
+```
+
+Optionally, if you're already dealing with an AST that contains ES6 imports
+or exports, you can pass that AST object to the `graph` function:
+
+```
+var esprima = require('esprima'); // Make sure your Esprima version supports ES6!
+var graph   = require('module-graph');
+
+var ast = esprima.parse('import foo from "bar"; export default foo;');
+var result = graph(ast);
 ```
 
 Note: none of the dependency names are normalized. It's up to you to decide how
