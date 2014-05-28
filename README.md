@@ -6,14 +6,28 @@ Utility for obtaining the dependency graph from ES6 modules.
 API
 ---
 
+### graph(source, [options])
+
 `module-graph` exports a single function that takes a string with source code
-and an object with `imports` and `exports` properties:
+and returns an array of the dependencies in that module:
 
 ```js
 var graph = require('module-graph');
 
 var result = graph('import foo from "bar"; export default foo;');
+// returns an array like ['bar']
+```
 
+If the `includeBindings` option is set to `true`, then the graph function
+will return an object containing all the imported and exported names of the
+module:
+
+```js
+var graph = require('module-graph');
+
+var result = graph('import foo from "bar"; export default foo;', {
+    includeBindings: true
+});
 /* result looks like this:
 {
     imports: {
