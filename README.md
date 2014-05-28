@@ -46,4 +46,11 @@ License
 This software is free to use under the Yahoo Inc. BSD license.
 See the [LICENSE file][] for license text and copyright information.
 
+Contribute
+----------
+
+See the [CONTRIBUTING file][] for info.
+
+
+[CONTRIBUTING file]: https://github.com/yahoo/module-graph/blob/master/CONTRIBUTING.md
 [LICENSE file]: https://github.com/yahoo/module-graph/blob/master/LICENSE.md
