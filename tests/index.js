@@ -1,3 +1,8 @@
+/*
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yahoo/module-graph/blob/master/LICENSE.md
+*/
 var graph  = require('../dist/index'),
     path   = require('path'),
     fs     = require('fs'),
