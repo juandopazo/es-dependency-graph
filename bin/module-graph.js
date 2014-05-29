@@ -9,6 +9,7 @@ var cli = require('../dist/cli');
 cli(require('nomnom')
     .options({
         path: {
+            required: true,
             position: 0,
             help: 'Files or folders to read',
             list: true
@@ -19,6 +20,7 @@ cli(require('nomnom')
             default: false
         },
         output: {
+            required: true,
             abbr: 'o',
             metavar: 'FILE',
             help: 'Output JSON file'
