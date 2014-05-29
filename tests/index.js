@@ -6,7 +6,7 @@ https://github.com/yahoo/module-graph/blob/master/LICENSE.md
 var graph   = require('../dist/index'),
     path    = require('path'),
     fs      = require('fs'),
-    esprima = require('../vendor/esprima'),
+    esprima = require('esprima-fb'),
     expect  = require('chai').expect;
 
 describe('graph', function () {
