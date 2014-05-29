@@ -1,6 +1,7 @@
 {
     "name": "module-graph",
     "description": "Utility for obtaining the dependency graph from ES6 modules",
+    "version": "0.1.1",
     "keywords": [
         "ecmascript",
         "es6",
@@ -10,7 +11,6 @@
         "analizer"
     ],
     "author": "Juan Dopazo <jdopazo@yahoo-inc.com> (http://github.com/juandopazo)",
-    "version": "0.1.0",
     "bin": {
         "module-graph": "./bin/module-graph.js"
     },
