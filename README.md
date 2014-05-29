@@ -1,6 +1,8 @@
 module-graph
 ============
 
+[![Build Status](https://travis-ci.org/juandopazo/module-graph.png?branch=master)](https://travis-ci.org/juandopazo/module-graph)
+
 Utility for obtaining the dependency graph from ES6 modules.
 
 Limitations
@@ -79,5 +81,5 @@ Contribute
 See the [CONTRIBUTING file][] for info.
 
 
-[CONTRIBUTING file]: https://github.com/yahoo/module-graph/blob/master/CONTRIBUTING.md
-[LICENSE file]: https://github.com/yahoo/module-graph/blob/master/LICENSE.md
+[CONTRIBUTING file]: https://github.com/juandopazo/module-graph/blob/master/CONTRIBUTING.md
+[LICENSE file]: https://github.com/juandopazo/module-graph/blob/master/LICENSE.md

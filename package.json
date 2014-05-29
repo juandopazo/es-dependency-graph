@@ -14,6 +14,16 @@
     "bin": {
         "module-graph": "./bin/module-graph.js"
     },
+    "repository": {
+        "type": "git",
+        "url" : "git://github.com/juandopazo/module-graph.git"
+    },
+    "bugs": {
+        "url": "https://github.com/juandopazo/module-graph/issues"
+    },
+    "engines": {
+        "node": ">=0.8.x"
+    },
     "dependencies": {
         "nomnom": "^1.6.2",
         "mkdirp": "^0.5.0",
