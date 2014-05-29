@@ -38,7 +38,8 @@
         "grunt-es6-module-transpiler": "^0.6.0",
         "grunt-es6-module-wrap-default": "^0.2.0",
         "grunt-mocha-test": "^0.10.2",
-        "grunt-contrib-clean": "^0.5.0"
+        "grunt-contrib-clean": "^0.5.0",
+        "xunit-file": "*"
     },
     "files": ["dist", "build", "bin", "vendor", "LICENSE.md"],
     "main": "dist/index.js",
