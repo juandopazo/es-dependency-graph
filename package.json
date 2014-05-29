@@ -22,7 +22,7 @@
         "url": "https://github.com/juandopazo/module-graph/issues"
     },
     "engines": {
-        "node": ">=0.8.x"
+        "node": ">=0.10.x"
     },
     "dependencies": {
         "nomnom": "^1.6.2",
