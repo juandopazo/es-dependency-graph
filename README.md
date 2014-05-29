@@ -2,6 +2,7 @@ module-graph
 ============
 
 [![Build Status](https://travis-ci.org/juandopazo/module-graph.svg?branch=master)](https://travis-ci.org/juandopazo/module-graph)
+[![Dependency Status](https://gemnasium.com/juandopazo/module-graph.svg)](https://gemnasium.com/juandopazo/module-graph)
 
 Utility for obtaining the dependency graph from ES6 modules.
 
