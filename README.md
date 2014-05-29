@@ -1,7 +1,7 @@
 module-graph
 ============
 
-[![Build Status](https://travis-ci.org/juandopazo/module-graph.png?branch=master)](https://travis-ci.org/juandopazo/module-graph)
+[![Build Status](https://travis-ci.org/juandopazo/module-graph.svg?branch=master)](https://travis-ci.org/juandopazo/module-graph)
 
 Utility for obtaining the dependency graph from ES6 modules.
 
