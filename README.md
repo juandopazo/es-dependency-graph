@@ -1,18 +1,24 @@
-module-graph
-============
+es-dependency-graph
+===================
 
-[![Build Status](https://travis-ci.org/juandopazo/module-graph.svg?branch=master)](https://travis-ci.org/juandopazo/module-graph)
-[![Dependency Status](https://gemnasium.com/juandopazo/module-graph.svg)](https://gemnasium.com/juandopazo/module-graph)
-[![NPM version](https://badge.fury.io/js/module-graph.svg)](http://badge.fury.io/js/module-graph)
+[![Build Status](https://travis-ci.org/yahoo/es-dependency-graph.svg?branch=master)](https://travis-ci.org/yahoo/es-dependency-graph)
+[![Dependency Status](https://gemnasium.com/yahoo/es-dependency-graph.svg)](https://gemnasium.com/yahoo/es-dependency-graph)
+[![NPM version](https://badge.fury.io/js/es-dependency-graph.svg)](http://badge.fury.io/js/es-dependency-graph)
 
 Utility for obtaining the dependency graph from ES6 modules.
 
 Limitations
 -----------
 
-`module-graph` only works for source code that the Esprima parser can parse.
-This does not include the whole ES6 syntax at the moment. Consider this module
-experimental.
+`es-dependency-graph` only works for source code that the [Esprima parser][] can parse.
+This does not include the whole ES6 syntax at the moment. In light of this
+limitation, you should consider this module experimental until the ES6 syntax
+is standardized and Esprima can parse it.
+
+This module only analyzes imports and exports declared using the ES module syntax.
+Dynamic calls to the ES Loader will not be taken into account. If your application
+uses the System loader to load modules, you should consider using a tracer like
+the [SystemJS build tool][].
 
 
 API
@@ -20,11 +26,11 @@ API
 
 ### graph(source, [options])
 
-`module-graph` exports a single function that takes a string with source code
+`es-dependency-graph` exports a single function that takes a string with source code
 and returns an array of the dependencies in that module:
 
 ```js
-var graph = require('module-graph');
+var graph = require('es-dependency-graph');
 
 var result = graph('import foo from "bar"; export default foo;');
 // returns an array like ['bar']
@@ -35,7 +41,7 @@ will return an object containing all the imported and exported names of the
 module:
 
 ```js
-var graph = require('module-graph');
+var graph = require('es-dependency-graph');
 
 var result = graph('import foo from "bar"; export default foo;', {
     includeBindings: true
@@ -55,7 +61,7 @@ or exports, you can pass that AST object to the `graph` function:
 
 ```
 var esprima = require('esprima'); // Make sure your Esprima version supports ES6!
-var graph   = require('module-graph');
+var graph   = require('es-dependency-graph');
 
 var ast = esprima.parse('import foo from "bar"; export default foo;');
 var result = graph(ast);
@@ -67,9 +73,9 @@ to normalize them.
 CLI
 ---
 
-If installed with `npm install module-graph -g` it can be used as a global
-command `module-graph paths... [options]` which will generate a JSON file with
-all the dependency information. Try `module-graph --help` for more information.
+If installed with `npm install es-dependency-graph -g` it can be used as a global
+command `es-dependency-graph paths... [options]` which will generate a JSON file with
+all the dependency information. Try `es-dependency-graph --help` for more information.
 
 License
 -------
@@ -83,5 +89,7 @@ Contribute
 See the [CONTRIBUTING file][] for info.
 
 
-[CONTRIBUTING file]: https://github.com/juandopazo/module-graph/blob/master/CONTRIBUTING.md
-[LICENSE file]: https://github.com/juandopazo/module-graph/blob/master/LICENSE.md
+[CONTRIBUTING file]: https://github.com/yahoo/es-dependency-graph/blob/master/CONTRIBUTING.md
+[LICENSE file]: https://github.com/yahoo/es-dependency-graph/blob/master/LICENSE.md
+[Esprima parser]: http://esprima.org/
+[SystemJS build tool]: https://github.com/systemjs/builder/#advanced-build

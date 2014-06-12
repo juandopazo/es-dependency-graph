@@ -1,5 +1,5 @@
 {
-    "name": "module-graph",
+    "name": "es-dependency-graph",
     "description": "Utility for obtaining the dependency graph from ES6 modules",
     "version": "0.1.2",
     "keywords": [
@@ -17,10 +17,10 @@
     },
     "repository": {
         "type": "git",
-        "url" : "git://github.com/juandopazo/module-graph.git"
+        "url" : "git://github.com/yahoo/es-dependency-graph.git"
     },
     "bugs": {
-        "url": "https://github.com/juandopazo/module-graph/issues"
+        "url": "https://github.com/yahoo/es-dependency-graph/issues"
     },
     "engines": {
         "node": ">=0.10.x"
