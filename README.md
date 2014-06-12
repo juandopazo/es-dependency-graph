@@ -24,26 +24,26 @@ the [SystemJS build tool][].
 API
 ---
 
-### graph(source, [options])
+### depGraph(source, [options])
 
 `es-dependency-graph` exports a single function that takes a string with source code
 and returns an array of the dependencies in that module:
 
 ```js
-var graph = require('es-dependency-graph');
+var depGraph = require('es-dependency-graph');
 
-var result = graph('import foo from "bar"; export default foo;');
+var result = depGraph('import foo from "bar"; export default foo;');
 // returns an array like ['bar']
 ```
 
-If the `includeBindings` option is set to `true`, then the graph function
+If the `includeBindings` option is set to `true`, then the depGraph function
 will return an object containing all the imported and exported names of the
 module:
 
 ```js
-var graph = require('es-dependency-graph');
+var depGraph = require('es-dependency-graph');
 
-var result = graph('import foo from "bar"; export default foo;', {
+var result = depGraph('import foo from "bar"; export default foo;', {
     includeBindings: true
 });
 /* result looks like this:
@@ -57,14 +57,14 @@ var result = graph('import foo from "bar"; export default foo;', {
 ```
 
 Optionally, if you're already dealing with an AST that contains ES6 imports
-or exports, you can pass that AST object to the `graph` function:
+or exports, you can pass that AST object to the `depGraph` function:
 
 ```
-var esprima = require('esprima'); // Make sure your Esprima version supports ES6!
-var graph   = require('es-dependency-graph');
+var esprima  = require('esprima'); // Make sure your Esprima version supports ES6!
+var depGraph = require('es-dependency-graph');
 
 var ast = esprima.parse('import foo from "bar"; export default foo;');
-var result = graph(ast);
+var result = depGraph(ast);
 ```
 
 Note: none of the dependency names are normalized. It's up to you to decide how
@@ -74,8 +74,8 @@ CLI
 ---
 
 If installed with `npm install es-dependency-graph -g` it can be used as a global
-command `es-dependency-graph paths... [options]` which will generate a JSON file with
-all the dependency information. Try `es-dependency-graph --help` for more information.
+command `dep-graph paths... [options]` which will generate a JSON file with
+all the dependency information. Try `dep-graph --help` for more information.
 
 License
 -------
