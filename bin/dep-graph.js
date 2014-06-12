@@ -17,7 +17,7 @@ cli(require('nomnom')
         walk: {
             abbr: 'w',
             help: 'Walk the folder structure',
-            default: false
+            flag: true
         },
         output: {
             required: true,
@@ -27,7 +27,8 @@ cli(require('nomnom')
         },
         'include-bindings': {
             abbr: 'b',
-            help: 'Include named imports and exports'
+            help: 'Include named imports and exports',
+            flag: true
         }
     })
     .nocolors()
