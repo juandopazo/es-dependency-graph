@@ -13,7 +13,7 @@
     "author": "Juan Dopazo <jdopazo@yahoo-inc.com> (http://github.com/juandopazo)",
     "license": "BSD-3-Clause",
     "bin": {
-        "module-graph": "./bin/module-graph.js"
+        "dep-graph": "./bin/dep-graph.js"
     },
     "repository": {
         "type": "git",
