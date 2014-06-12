@@ -59,7 +59,7 @@ var result = depGraph('import foo from "bar"; export default foo;', {
 Optionally, if you're already dealing with an AST that contains ES6 imports
 or exports, you can pass that AST object to the `depGraph` function:
 
-```
+```js
 var esprima  = require('esprima'); // Make sure your Esprima version supports ES6!
 var depGraph = require('es-dependency-graph');
 
