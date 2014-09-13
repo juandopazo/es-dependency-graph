@@ -6,7 +6,7 @@ https://github.com/yahoo/es-dependency-graph/blob/master/LICENSE.md
 var graph   = require('../dist/index'),
     path    = require('path'),
     fs      = require('fs'),
-    esprima = require('esprima-fb'),
+    esprima = require('esprima'),
     expect  = require('chai').expect;
 
 describe('graph', function () {
