@@ -17,7 +17,7 @@
     },
     "repository": {
         "type": "git",
-        "url" : "git://github.com/yahoo/es-dependency-graph.git"
+        "url": "git://github.com/yahoo/es-dependency-graph.git"
     },
     "bugs": {
         "url": "https://github.com/yahoo/es-dependency-graph/issues"
@@ -27,9 +27,8 @@
     },
     "dependencies": {
         "esprima-fb": "6001.1001.0-dev-harmony-fb",
-        "nomnom": "^1.6.2",
         "mkdirp": "^0.5.0",
-        "extend": "^1.2.1"
+        "nomnom": "^1.6.2"
     },
     "devDependencies": {
         "rimraf": "^2.2.8",
@@ -43,7 +42,13 @@
         "grunt-contrib-clean": "^0.5.0",
         "xunit-file": "*"
     },
-    "files": ["dist", "build", "bin", "vendor", "LICENSE.md"],
+    "files": [
+        "dist",
+        "build",
+        "bin",
+        "vendor",
+        "LICENSE.md"
+    ],
     "main": "dist/index.js",
     "scripts": {
         "prepublish": "grunt build",
