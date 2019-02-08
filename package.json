@@ -1,7 +1,7 @@
 {
     "name": "es-dependency-graph",
     "description": "Utility for obtaining the dependency graph from ES6 modules",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "keywords": [
         "ecmascript",
         "es6",
